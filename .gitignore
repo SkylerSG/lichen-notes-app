@@ -1,0 +1,15 @@
+node_modules
+dist
+out
+.DS_Store
+*.log*
+.editorconfig
+.eslintignore
+.eslintrc.cjs
+.prettierignore
+.prettierrc.yaml
+electron-builder.yml
+tailwind.config.js
+tsconfig.node.json
+tsconfig.web.json
+yarn.lock
