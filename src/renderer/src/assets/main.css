@@ -16,9 +16,21 @@
     @apply overflow-hidden;
   }
   header {
-    -webkit-app-region: drag;
+    --webkit-app-region: drag;
   }
   button {
-    -webkit-app-region: no-drag;
+    --webkit-app-region: no-drag;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#555] rounded-lg;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
   }
 }
