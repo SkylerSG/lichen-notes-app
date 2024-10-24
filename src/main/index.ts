@@ -11,7 +11,7 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     center: true,
-    title: 'SkyNote',
+    title: 'Coral',
     vibrancy: 'under-window', // Mac only
     visualEffectState: 'active', // mac only
     backgroundMaterial: 'acrylic', // Windows BG Material
@@ -56,7 +56,7 @@ app.whenReady().then(() => {
   })
 
   // IPC test
-  ipcMain.on('ping', () => console.log('pong'))
+  ipcMain.on('ping', () => console.log('pong')) // har har
 
   createWindow()
 

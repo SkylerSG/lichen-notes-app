@@ -17,11 +17,11 @@ const App = () => {
   return (
     <>
       <RootLayout>
-        <Sidebar className="p-2">
+        <Sidebar className="p-2 bg-slate-400/10">
           <ActionButtonsRow className="flex justify-between mt-1" />
           <NotePreviewList className="mt-3 space-y-1 " onSelect={resetScroll} />
         </Sidebar>
-        <Content ref={contentContainerRef} className="border-l bg-zinc-900/50 border-l-white/20">
+        <Content ref={contentContainerRef} className="border-l bg-slate-400/20 border-l-white/20">
           <FloatingNoteTitle className="pt-2" />
           <MarkdownEditor />
         </Content>
@@ -31,3 +31,5 @@ const App = () => {
 }
 
 export default App
+
+//Notes: Stick with the slate bg until full notes part built out, then swap to reds for latex formatter.
