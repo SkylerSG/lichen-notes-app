@@ -1,5 +1,7 @@
 node_modules
 dist
+.vscode
+build
 out
 .DS_Store
 *.log*
