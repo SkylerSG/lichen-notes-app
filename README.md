@@ -1,5 +1,7 @@
 # Lichen - An Electron application with React, TypeScript, Tailwind CSS, and Jotai
 
+## Project/Tutorial Credit: https://www.youtube.com/watch?v=t8ane4BDyC8
+
 ## Setup - Electron Generated
 
 ### Recommended IDE Setup
