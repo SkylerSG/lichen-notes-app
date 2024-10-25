@@ -1,12 +1,12 @@
-# Lichen
+# Lichen - An Electron application with React, TypeScript, Tailwind CSS, and Jotai
 
-An Electron application with React and TypeScript
+## Setup - Electron Generated
 
-## Recommended IDE Setup
+### Recommended IDE Setup
 
 - [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-## Project Setup
+### Project Setup
 
 ### Install
 
@@ -23,7 +23,7 @@ $ yarn dev
 ### Build
 
 ```bash
-# For windows
+# For Windows
 $ yarn build:win
 
 # For macOS
