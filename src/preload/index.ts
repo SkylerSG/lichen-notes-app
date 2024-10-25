@@ -1,4 +1,4 @@
-import { GetNotes } from '@shared/types'
+import { GetNotes, ReadNote } from '@shared/types'
 import { contextBridge, ipcRenderer } from 'electron'
 
 if (!process.contextIsolated) {
@@ -9,7 +9,8 @@ if (!process.contextIsolated) {
 try {
   contextBridge.exposeInMainWorld('context', {
     locale: navigator.language, // Pretty Cool!
-    getNotes: (...args: Parameters<GetNotes>) => ipcRenderer.invoke('getNotes', ...args)
+    getNotes: (...args: Parameters<GetNotes>) => ipcRenderer.invoke('getNotes', ...args),
+    readNote: (...args: Parameters<ReadNote>) => ipcRenderer.invoke('readNote', ...args)
   })
 } catch (error) {
   console.log(error)

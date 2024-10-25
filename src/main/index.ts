@@ -1,6 +1,6 @@
-import { getNotes } from '@/lib'
+import { getNotes, readNote } from '@/lib'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
-import { GetNotes } from '@shared/types'
+import { GetNotes, ReadNote } from '@shared/types'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { join } from 'path'
 import icon from '../../resources/icon.png?asset'
@@ -61,6 +61,7 @@ app.whenReady().then(() => {
   ipcMain.on('ping', () => console.log('pong')) // har har - needed? probably not
 
   ipcMain.handle('getNotes', (_, ...args: Parameters<GetNotes>) => getNotes(...args))
+  ipcMain.handle('readNote', (_, ...args: Parameters<ReadNote>) => readNote(...args))
   createWindow()
 
   app.on('activate', function () {
