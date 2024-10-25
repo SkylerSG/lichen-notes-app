@@ -1,5 +1,6 @@
 import { NotePreview } from '@/components'
 import { useNotesList } from '@renderer/hooks/useNotesList'
+import { isEmpty } from 'lodash'
 import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 export type NotePreviewListProps = ComponentProps<'ul'> & {
@@ -7,9 +8,10 @@ export type NotePreviewListProps = ComponentProps<'ul'> & {
 }
 export const NotePreviewList = ({ onSelect, className, ...props }: NotePreviewListProps) => {
   const { notes, selectedNoteIntex, handleNoteSelect } = useNotesList({ onSelect })
-  if (notes.length == 0) {
+  if (!notes) return null
+  if (isEmpty(notes)) {
     return (
-      <ul className="pt-3">
+      <ul className="pt-3 text-center">
         <span className={twMerge('text-center text-white/75', className)} {...props}>
           No notes have been taken!
         </span>

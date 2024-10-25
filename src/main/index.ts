@@ -1,4 +1,6 @@
+import { getNotes } from '@/lib'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
+import { GetNotes } from '@shared/types'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { join } from 'path'
 import icon from '../../resources/icon.png?asset'
@@ -11,7 +13,7 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     center: true,
-    title: 'Coral',
+    title: 'Lichen',
     vibrancy: 'under-window', // Mac only
     visualEffectState: 'active', // mac only
     backgroundMaterial: 'acrylic', // Windows BG Material
@@ -56,8 +58,9 @@ app.whenReady().then(() => {
   })
 
   // IPC test
-  ipcMain.on('ping', () => console.log('pong')) // har har
+  ipcMain.on('ping', () => console.log('pong')) // har har - needed? probably not
 
+  ipcMain.handle('getNotes', (_, ...args: Parameters<GetNotes>) => getNotes(...args))
   createWindow()
 
   app.on('activate', function () {

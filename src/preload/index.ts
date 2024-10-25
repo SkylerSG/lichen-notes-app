@@ -1,4 +1,5 @@
-import { contextBridge } from 'electron'
+import { GetNotes } from '@shared/types'
+import { contextBridge, ipcRenderer } from 'electron'
 
 if (!process.contextIsolated) {
   throw new Error(
@@ -7,7 +8,8 @@ if (!process.contextIsolated) {
 }
 try {
   contextBridge.exposeInMainWorld('context', {
-    locale: navigator.language // Pretty Cool!
+    locale: navigator.language, // Pretty Cool!
+    getNotes: (...args: Parameters<GetNotes>) => ipcRenderer.invoke('getNotes', ...args)
   })
 } catch (error) {
   console.log(error)
